@@ -46,6 +46,11 @@ export var todosReducer = (state = [], action) => {
                     completedAt: nextCompleted ? moment().unix() : undefined
                 };
             });
+        case 'ADD_TODOS':
+            return [
+                ...state,
+                ...action.todos
+            ];
         default:
             return state;
     }
